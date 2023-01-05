@@ -218,7 +218,7 @@ Phone:
 
 <ion-icon name="mail-outline"></ion-icon>
 Email:
-info@jack.com
+omkcook.data@gmail.com
 support@jack.com
 
 <ion-icon name="logo-facebook"></ion-icon>
