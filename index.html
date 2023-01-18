@@ -247,7 +247,26 @@
           <div class="btn-group">
             <button class="btn btn-secondary">Hire me</button>
 
-            <button class="btn btn-primary" onclick="window.location.href='./assets/Resume/Jeremiah_Cook_Data_Analyst.pdf' ">Download cv</button>
+            <button class="btn btn-primary" onclick="downloadCV()">Download cv</button>
+
+            <script>
+              function downloadCV() {
+                fetch('./assets/resume/Jeremiah Resume.pdf')
+                .then(response => response.blob())
+                .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                 a.href = url;
+                a.download = 'Jeremiah Resume.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+              })
+                .catch(() => alert('Error downloading the CV'));
+              }
+            </script>
+
 
           </div>
 
